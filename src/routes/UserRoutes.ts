@@ -1,10 +1,10 @@
-import { Router } from 'express'
-import UserController from '../Controller/UserController'
+import { Router, Request, Response } from 'express'
+import CarController from '../Controller/CarController'
 
 const routes = Router()
 
-routes.post('/user', UserController.create)
+routes.post('/car', (req: Request, res: Response) => { new CarController(req, res).create() })
 
-routes.get('/user', UserController.getAll)
+routes.get('/car', (req: Request, res: Response) => { new CarController(req, res).getAll() })
 
 export default routes
