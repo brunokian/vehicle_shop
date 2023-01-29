@@ -1,0 +1,16 @@
+- criar api rest
+    - npm init -y: cria package.json
+    - npm install typescript
+    - npm install ts-node-dev--save-dev
+        - crie um spript 
+        Ex. "dev": "ts-node-dev --respawn -- transpile-only src/app.ts"
+    - npm intall -D express
+    - npm install @types/express
+
+express.json()
+    - necessario para que a nossa api consiga ler arquivos json
+
+app.listen()
+    - onde conectamos a nossa api com uma porta
+
+- criar docker-compose

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo-test
+    restart: always
+    ports:
+      - 27017:27017
+    
+    # essas variaveis de ambiente são pré-definidas
+    # em um projeto real, é aconselhavel o uso de .env para a definição de seus valores
+    environment:
+      - MONGO_INITDB_DATABASE=mongoTeste
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+
