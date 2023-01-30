@@ -19,6 +19,10 @@ class MotoODM extends AbstractODM<IMoto> {
                 type: Number,
                 required: true,
             },
+            type: {
+                type: String,
+                required: true
+            }
         })
 
         super(schema, 'Motos')

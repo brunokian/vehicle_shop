@@ -20,6 +20,11 @@ abstract class AbstractService<M> {
         const result = await this.model.getAll()
         return result
     }
+
+    async getById(id) {
+        const result = await this.model.getById(id)
+        return result
+    }
 }
 
 export default AbstractService;

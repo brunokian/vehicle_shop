@@ -28,6 +28,25 @@ class MotoController {
             return this.res.status(404).json({ message: error.message })
         }
     }
+    public async getById() {
+        try {
+            const { id } = this.req.params
+            const result = await this.motoService.getById(id)
+            return this.res.status(200).json(result)
+        } catch (error) {
+            return this.res.status(404).json({ message: error.message })
+        }
+    }
+    public async getType() {
+        try {
+            const { id } = this.req.params
+            const result = await this.motoService.getType(id)
+            
+            return this.res.status(300).json(result)
+        } catch (error) {
+            return this.res.status(404).json({ message: error.message })
+        }
+    }
 }
 
 export default MotoController;

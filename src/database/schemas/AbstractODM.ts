@@ -18,6 +18,12 @@ abstract class AbstractODM<T> {
     public async getAll() {
         return this.model.find()
     }
+
+    public async getById(id: string) {
+        const result = await this.model.findById(id)
+
+        return result
+    }
  }
 
 export default AbstractODM;

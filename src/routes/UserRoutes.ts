@@ -12,4 +12,8 @@ routes.post('/moto', (req: Request, res: Response) => { new MotoController(req, 
 
 routes.get('/moto', (req: Request, res: Response) => { new MotoController(req, res).getAll() })
 
+routes.get('/moto/:id', (req: Request, res: Response) => { new MotoController(req, res).getById() })
+
+routes.get('/moto/:id/type', (req: Request, res: Response) => { new MotoController(req, res).getType() })
+
 export default routes
