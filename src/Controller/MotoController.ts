@@ -1,30 +1,28 @@
+import MotoService from "../Services/MotoService";
 import { Response, Request } from "express";
-import CarODM from "../database/schemas/CarODM";
-import CarService from "../Services/CarServices";
 
-class CarController {
-    private carService: CarService;
+class MotoController {
+    private motoService: MotoService;
     private req: Request;
     private res: Response;
 
     constructor(req: Request, res: Response) {
-        this.carService = new CarService();
+        this.motoService = new MotoService();
         this.req = req;
         this.res = res;
     }
 
     public async create() {
         try {
-            const result = await this.carService.create(this.req.body);
+            const result = await this.motoService.create(this.req.body);
             return this.res.status(201).json(result)
         } catch (error) {
             return this.res.status(400).json({ message: error.message })
         }
     }
-
     public async getAll() {
         try {
-            const result = await this.carService.getAll()
+            const result = await this.motoService.getAll()
             return this.res.status(200).json(result)
         } catch (error) {
             return this.res.status(404).json({ message: error.message })
@@ -32,4 +30,4 @@ class CarController {
     }
 }
 
-export default CarController
+export default MotoController;
