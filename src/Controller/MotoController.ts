@@ -42,7 +42,7 @@ class MotoController {
             const { id } = this.req.params
             const result = await this.motoService.getType(id)
             
-            return this.res.status(300).json(result)
+            return this.res.status(200).json(result)
         } catch (error) {
             return this.res.status(404).json({ message: error.message })
         }

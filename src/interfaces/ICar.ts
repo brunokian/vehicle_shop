@@ -1,7 +1,6 @@
-interface ICar {
-    model: string;
-    manufacturer: string;
-    buyValue: number;
+import IVehicle from "./IVehicle";
+
+interface ICar extends IVehicle {
     doorsQty: number;
 }
 

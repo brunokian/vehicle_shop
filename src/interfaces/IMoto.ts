@@ -1,7 +1,6 @@
-interface IMoto {
-    model: string;
-    manufacturer: string;
-    buyValue: number;
+import IVehicle from "./IVehicle";
+
+interface IMoto extends IVehicle {
     type: string;
 }
 
