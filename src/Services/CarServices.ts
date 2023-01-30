@@ -1,21 +1,10 @@
 import CarODM from "../database/schemas/CarODM";
 import ICar from "../interfaces/ICar";
+import AbstractService from "./AbstractService";
 
-class CarService {
-    private carModel: CarODM
-
+class CarService extends AbstractService<ICar> {
     constructor() {
-        this.carModel = new CarODM();
-    }
-
-    async create(car: ICar) {
-        const result = await this.carModel.create(car)
-        return result
-    }
-
-    async getAll() {
-        const result = await this.carModel.getAll()
-        return result
+        super(CarODM, 'Car')
     }
 }
 

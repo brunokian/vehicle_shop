@@ -1,21 +1,10 @@
 import MotoODM from "../database/schemas/MotoODM";
 import IMoto from "../interfaces/IMoto";
+import AbstractService from "./AbstractService";
 
-class MotoService {
-    private motoModel: MotoODM
-
+class MotoService extends AbstractService<IMoto> {
     constructor() {
-        this.motoModel = new MotoODM();
-    }
-
-    async create(moto: IMoto) {
-        const result = await this.motoModel.create(moto)
-        return result
-    }
-
-    async getAll() {
-        const result = await this.motoModel.getAll()
-        return result
+        super(MotoODM, 'Moto')
     }
 }
 
