@@ -25,7 +25,7 @@ class MotoController {
             const result = await this.motoService.getAll()
             return this.res.status(200).json(result)
         } catch (error) {
-            return this.res.status(404).json({ message: error.message })
+            return this.res.status(400).json({ message: 'foi??' })
         }
     }
     public async getById() {
