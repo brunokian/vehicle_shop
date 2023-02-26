@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"
-import { getData } from '../services/request';
+import { getData, deleteData } from '../services/request';
 
 function CarPage() {
     const [allCars, setAllCars] = useState([])
@@ -14,6 +14,16 @@ function CarPage() {
             console.log(error.response.data);
         }
         
+    }
+
+    async function deleteAll() {
+        try {
+            const result = await deleteData('http://localhost:3001/carPage')
+            console.log(result);
+            setAllCars([])
+        } catch (error) {
+            console.log(error.response.data);
+        }
     }
 
     return (
@@ -37,6 +47,9 @@ function CarPage() {
                     )
                 })
             }
+            <button type='submit' onClick={deleteAll}>
+                Delete All
+            </button>
         </div>
     )
 }

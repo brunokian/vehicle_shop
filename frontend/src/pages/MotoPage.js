@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { getData } from '../services/request';
+import { getData, deleteData } from '../services/request';
 
 function MotoPage() {
     const [allMotos, setAllMotos] = useState([])
@@ -16,11 +16,21 @@ function MotoPage() {
         
     }
 
+    async function deleteAll() {
+        try {
+            const result = await deleteData('http://localhost:3001/motoPage')
+            console.log(result);
+            setAllMotos([])
+        } catch (error) {
+            console.log(error.response.data);
+        }
+    }
+
     return (
         <div>
 
             <h1>MotorcycleDB</h1>
-            <button type='submit' onClick={ () => getAll() }>
+            <button type='submit' onClick={getAll}>
                 All Motos
             </button>
             <Link to="/">
@@ -38,6 +48,9 @@ function MotoPage() {
                     )
                 })
             }
+            <button type='submit' onClick={deleteAll}>
+                Delete All
+            </button>
         </div>
     )
 }

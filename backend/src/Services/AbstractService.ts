@@ -25,6 +25,11 @@ abstract class AbstractService<M> {
         const result = await this.model.getById(id)
         return result
     }
+
+    async deleteAll() {
+        const result = await this.model.deleteAll()
+        return result
+    }
 }
 
 export default AbstractService;

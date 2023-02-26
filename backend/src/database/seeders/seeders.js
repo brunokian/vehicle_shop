@@ -6,13 +6,14 @@ const seedData = [
 ]
 
 const seedMotos = async () => {
-  MotoODM.deleteMany({})
-  .then(() => {
-    MotoODM.create(seedData)
-      .then(motos => console.log(`${motos.length} motos adicionadas com sucesso`))
-      .catch(err => console.error(err));
-  })
-  .catch(err => console.error(err));
+  try {
+    await MotoODM.deleteMany({});
+    const motos = await MotoODM.create(seedData);
+    console.log(`${motos.length} motos adicionadas com sucesso`);
+  } catch (error) {
+    console.error(error);
+  }
 };
+
 
 seedMotos()

@@ -16,4 +16,8 @@ routes.get('/motoPage/:id', (req: Request, res: Response) => { new MotoControlle
 
 routes.get('/motoPage/:id/type', (req: Request, res: Response) => { new MotoController(req, res).getType() })
 
+routes.delete('/motoPage', (req: Request, res: Response) => { new MotoController(req, res).deleteAll() })
+
+routes.delete('/carPage', (req: Request, res: Response) => { new CarController(req, res).deleteAll() })
+
 export default routes

@@ -24,6 +24,17 @@ abstract class AbstractODM<T> {
 
         return result
     }
+
+    public async deleteAll() {
+        try {
+            const result = this.model.deleteMany({});
+            console.log("All files deleted");
+            return result           
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
  }
 
 export default AbstractODM;

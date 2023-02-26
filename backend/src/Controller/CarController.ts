@@ -30,6 +30,15 @@ class CarController {
             return this.res.status(404).json({ message: error.message })
         }
     }
+
+    public async deleteAll() {
+        try {
+            const result = await this.carService.deleteAll()
+            return this.res.status(200).json(result)
+        } catch (error) {
+            return this.res.status(404).json({ message: error.message })
+        }
+    }
 }
 
 export default CarController

@@ -7,7 +7,11 @@ const request = axios.create({
 export const getData = async (endpoint) => {
     const { data } = await request.get(endpoint);
     return data;
-  };
-  
+};
+
+export const deleteData = async (endpoint) => {
+    const { data } = await request.delete(endpoint);
+    return data;
+}
 
 export default request;
