@@ -4,16 +4,16 @@ import MotoController from '../Controller/MotoController'
 
 const routes = Router()
 
-routes.post('/car', (req: Request, res: Response) => { new CarController(req, res).create() })
+routes.post('/carPage', (req: Request, res: Response) => { new CarController(req, res).create() })
 
-routes.get('/car', (req: Request, res: Response) => { new CarController(req, res).getAll() })
+routes.get('/carPage', (req: Request, res: Response) => { new CarController(req, res).getAll() })
 
-routes.post('/moto', (req: Request, res: Response) => { new MotoController(req, res).create() })
+routes.post('/motoPage', (req: Request, res: Response) => { new MotoController(req, res).create() })
 
-routes.get('/moto', (req: Request, res: Response) => { new MotoController(req, res).getAll() })
+routes.get('/motoPage', (req: Request, res: Response) => { new MotoController(req, res).getAll() })
 
-routes.get('/moto/:id', (req: Request, res: Response) => { new MotoController(req, res).getById() })
+routes.get('/motoPage/:id', (req: Request, res: Response) => { new MotoController(req, res).getById() })
 
-routes.get('/moto/:id/type', (req: Request, res: Response) => { new MotoController(req, res).getType() })
+routes.get('/motoPage/:id/type', (req: Request, res: Response) => { new MotoController(req, res).getType() })
 
 export default routes
